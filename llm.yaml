@@ -1,0 +1,80 @@
+# 定价规则：https://yunque360.feishu.cn/wiki/IrJ5wIDkkijhaPkvzgjc1k22nQc 综合费用列
+# price: free:免费, low: <=0.5元, medium: 0.5-1元, high: >1元
+# model_key: platform_name-model_name
+platforms:
+  volcengine:
+    key: volcengine
+    name: 火山
+    url: https://ark.cn-beijing.volces.com/api/v3/
+    api_key: c66b0116-a3ed-4820-80f0-406ab1178846
+    concurrent: 50 # max 500
+    models:
+      - showname: doubao-lite
+        model: doubao-1-5-lite-32k-250115
+        price: low
+      - showname: doubao-pro
+        model: doubao-1-5-pro-32k-250115
+        price: low
+      - showname: deepseek-v3
+        model: deepseek-v3-250324
+        price: medium
+  zhipu:
+    key: zhipu
+    name: 智谱
+    url: https://open.bigmodel.cn/api/paas/v4/
+    api_key: e1a6e5bbaba24e44a15751c73e7b9988.HFH29rWY3FLIUfv1
+    concurrent: 30 # max 40
+    models:
+      - showname: glm-4-flash
+        model: glm-4-flash-250414
+        price: free
+      - showname: glm-4-flashx
+        model: glm-4-flashx-250414
+        price: low
+      - showname: glm-4-air
+        model: glm-4-air-250414
+        price: low
+      # 抢钱了
+      # - showname: glm-4-plus
+      #   model: glm-4-plus
+      #   price: high
+  aliyun:
+    key: aliyun
+    name: 阿里
+    url: https://dashscope.aliyuncs.com/compatible-mode/v1/
+    api_key: sk-06be4a7972884a03b1cc0b99d99e7fcd
+    concurrent: 15 # max 20
+    models:
+      - showname: qwen-turbo
+        model: qwen-turbo-latest # 2025-04-28
+        price: low
+      - showname: qwen-plus
+        model: qwen-plus-latest # 2025-04-28
+        price: low
+      - showname: qwen-max
+        model: qwen-max-latest # 2025-01-25
+        price: high
+  tencent:
+    key: tencent
+    name: 腾讯
+    url: https://api.hunyuan.cloud.tencent.com/v1/
+    api_key: sk-0Iu7Yobn31p24RuomgesTq9ZOkFRcrHeEc6geA5PV3pWZZsU
+    concurrent: 4 # max 5
+    models:
+      - showname: hunyuan-lite
+        model: hunyuan-lite
+        price: free
+      # 并发性能太差，不测了，只用免费的做调试
+      # - showname: hunyuan-turbos
+      #   model: hunyuan-turbos-20250416
+      #   price: medium
+      # - showname: hunyuan-standard
+      #   model: hunyuan-standard
+      #   price: medium
+      # - showname: hunyuan-large
+      #   model: hunyuan-large
+      #   price: high
+
+  # baidu:
+  #   url: https://qianfan.baidubce.com/v2/
+  #   api_key: bce-v3/ALTAK-q7UpNhyw16Hq4VXEoLNHO/ba9eebbe10c0a10de31d2ef71963c49e2f6eefde

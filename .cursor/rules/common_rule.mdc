@@ -1,0 +1,37 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# 代码风格
+
+- 代码组织紧凑，函数及其参数、字典尽量写在一行，每行代码量不超过120字符。
+- 注释过多会被罚款，注释行数不得超过代码的10%，尽量写行内注释。
+- 注释和UI都尽量使用中文，除非约定俗成的英文短语。
+- 尽量不做异常判断，除非异常高频出现。
+- 如无必要，不要创造多余的函数、变量，遵循奥卡姆剃刀原则。
+
+# 修改流程
+
+- 修改后，及时清除不使用的变量、函数、库。
+
+# 目录结构
+
+llm_eval/
+├── main.py              # 主程序入口
+├── config.py            # 配置文件
+├── llm.yaml            # LLM API 配置
+├── llm_client.py       # LLM API 客户端
+├── ui_shared.py        # 共享界面函数
+├── ui_single.py        # 单条比较界面
+├── ui_table.py         # 批量比较界面
+├── table_demo.xlsx     # 批量比较示例数据
+├── requirements.txt    # 项目依赖
+├── Dockerfile          # Docker 构建文件
+├── utils/              # 工具函数目录
+│   ├── __init__.py
+│   ├── comparator.py   # 比较器实现
+│   ├── log.py         # 日志工具
+│   └── resp_parser.py # 响应解析器
+├── logs/              # 日志目录
+└── runtime/           # 运行时文件目录
